@@ -1,0 +1,22 @@
+<template>
+  
+    <div style="background-color:rgb(57, 57, 63);height:auto;width:400px;color:#fff;padding:10px;
+    border:3px;border-color:chartreuse;border-style: solid">
+    <ai-dialog>
+       <ai-dialog-body>
+          <h4 >${notification.message}</h4>
+          
+       </ai-dialog-body>
+    </br>
+       <ai-dialog-footer if.bind="notification.IsConfirmBox">
+          <button class="btn btn-info" click.trigger = "dialogcontroller.cancel()">Cancel</button>
+          <button  class="btn btn-info" click.trigger = "dialogcontroller.ok(message)">Ok</button>
+       </ai-dialog-footer>	
+       <ai-dialog-footer if.bind="!notification.IsConfirmBox">
+       
+        <button  class="btn btn-info" click.trigger = "dialogcontroller.ok()">Ok</button>
+     </ai-dialog-footer>	
+    </ai-dialog>
+	
+</div>
+ </template>

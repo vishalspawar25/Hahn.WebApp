@@ -1,0 +1,128 @@
+<template>
+
+  <nav class="navbar navbar-dark bg-dark">
+    <a class="navbar-brand" href="#">Hahn Application Process</a>
+    <div class="form-inline my-2 my-lg-0 btn-group">
+      <button class="btn btn-group btn-outline-success my-2 my-sm-0" type="button" click.trigger="setLocale('en')">Eng</button>
+      <button class="btn btn-group btn-outline-success my-2 my-sm-0" type="button" click.trigger="setLocale('de')">Ger</button>
+    </div>
+  </nav>
+  <br>
+  <div class="container">
+    
+    <form id="frmRegister" class="form">
+      <div class="form-row">
+        <div class="form-group col-md-6">
+          <input type="hidden" id="id" name="id" value="model.id">
+          <label for="name" class="lbl">${'name' & t}</label>
+          <input type="text" class="form-control" id="name" placeholder="${'name' & t}" value.bind="model.name & validate">
+        </div>
+        <div class="form-group col-md-6">
+          <label for="familyName" class="lbl">${'familyName' & t}</label>
+          <input type="text" class="form-control" id="familyName" placeholder="${'familyName' & t}"
+            value.bind="model.familyName & validate">
+        </div>
+      </div>
+
+      <div class="form-row">
+        <div class="form-group col-md-6">
+          <label for="email" class="lbl">${'email' & t}</label>
+          <input type="text" class="form-control" id="email" placeholder="${'email' & t}"
+            value.bind="model.email & validate">
+        </div>
+        <div class="form-group col-md-6">
+          <label for="age" class="lbl">${'age' & t}</label>
+          <input type="number" min="20" max="60" class="form-control" id="age" placeholder="${'age' & t}"
+            value.bind="model.age & validate">
+        </div>
+      </div>
+
+      <div class="form-row">
+        <div class="form-group col-md-6">
+          <label for="address" class="lbl">${'address' & t}</label>
+          <textarea rows="3" class="form-control" id="address" placeholder="1234 Main St"
+            value.bind="model.address & validate"></textarea>
+        </div>
+        <div class="form-group col-md-6">
+          <label for="countryOfOrigin" class="lbl">${'countryOfOrigin' & t}</label>
+          <select class="selectpicker form-control" id="countryOfOrigin" value.bind="model.countryOfOrigin & validate">
+            <option>--Select--</option>
+            <option repeat.for="country of countries" model.bind="country.name">
+              ${country.name}
+            </option>
+          </select>
+        </div>
+      </div>
+
+      <div class="form-row">
+        <div class="form-group col-md-6">
+          <label for="countryOfOrigin" class="text lbl">${'isHired' & t}</label>
+          <div>
+            <label>
+              <input type="radio" id="notHired" name="hiredGroup" checked.bind="defaultHiredStatus" model.bind="false">
+              ${'notHired' & t}
+            </label>
+            <label>
+              <input type="radio" id="hired" name="hiredGroup" checked.bind="defaultHiredStatus" model.bind="true">
+              ${'hired' & t}
+            </label>
+          </div>
+
+        </div>
+
+      </div>
+      <div class="modal-footer">
+        <button type="submit" class="btn btn-primary"  if.bind="btnMode=='submit'" click.delegate="add(model)" disabled.bind="controller.errors.length>0?true:!hasChanged" >${'submit' & t}</button>
+        <button type="submit" class="btn btn-primary" if.bind="btnMode=='update'" click.delegate="update(model)" disabled.bind="controller.errors.length>0?true:!hasChanged" >${'update' & t}</button>
+        <button type="button" class="btn btn-secondary"  click.trigger="reset()">${'reset' & t}</button>
+        
+      </div>
+    </form>
+
+  </br>
+
+    <div >
+     
+      <table id="table" class="table .table-striped ">
+      <tr>
+        <th>${'name' & t}</th>
+        <th>${'familyName' & t}</th>
+        <th>${'email' & t}</th>
+        <th>${'age' & t}</th>
+        <th>${'address' & t}</th>
+        <th>${'countryOfOrigin' & t}</th>
+        <th>${'hired' & t}</th>
+        <th></th>
+      </tr>
+      
+      <tr if.bind="applicants.length>0" repeat.for="app of applicants">
+      <td>${app.name}</td>
+      <td>${app.familyName}</td>
+      <td>${app.email}</td>   
+      <td>${app.age}</td>
+      <td>${app.address}</td>
+      <td>${app.countryOfOrigin}</td>    
+      <td>
+        <i if.bind="app.isHired" class="fa fa-check text-success"></i>
+        <i if.bind="!app.isHired" class="fa fa-close text-danger"></i>
+
+        </td>  
+        <td>
+          <button type="button" class="btn btn-secondary"  title="Edit" click.trigger="edit(app)">
+            <i class="fa fa-pencil"></i>
+          </button>
+          <button type="button" class="btn btn-secondary" title="Delete"  click.trigger="delete(app.id)">
+            <i class="fa fa-trash"></i>
+          </button>
+          
+        </td>
+      </tr>
+      <tr if.bind="applicants.length==0">
+        <td colspan="6">${'noData' & t}</td>
+      </tr>
+    </table>
+    
+    </div>
+  </div>
+
+</template>

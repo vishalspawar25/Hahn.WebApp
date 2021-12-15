@@ -1,0 +1,23 @@
+{
+    "name": "Vorname",
+    "familyName": "Nachname",
+    "address": "Adresse",
+    "countryOfOrigin": "Herkunftsland",
+    "email": "Email",
+    "age": "Alter",
+    "isHired": "Einstellungsstatus",
+    "errorMessages": {
+        "required": "${$displayName} ist erforderlich.",
+        "minLength": "Der ${$displayName}  muss mindestens 5 Zeichen lang sein.",       
+        "addressMinLength": "Der ${$displayName}  muss mindestens 10 Zeichen lang sein.",
+        "email":"${$displayName} ist keine gültige E-Mail-Adresse.",
+        "range":"${$displayName}  muss zwischen oder gleich 20 und 60 sein.",
+        "validCountryName":"Bitte wählen Sie ein gültiges ${$displayName}."
+    },
+    "hired":"Eingestellt",
+    "notHired":"Nicht Eingestellt",
+    "submit":"Einreichen",
+    "update":"aktualisieren",
+    "reset":"Zurücksetzen",
+    "noData":"Kein Bewerber verfügbar"
+}

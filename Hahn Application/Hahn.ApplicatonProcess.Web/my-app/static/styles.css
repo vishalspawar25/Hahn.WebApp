@@ -1,0 +1,7 @@
+.lbl{
+    color: brown;
+}
+.lbl::after {
+    content: " *";
+  }
+  

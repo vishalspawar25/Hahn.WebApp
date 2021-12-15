@@ -1,0 +1,25 @@
+{   
+    "name": "First Name",
+    "familyName": "Family Name",
+    "address": "Address",
+    "countryOfOrigin": "Country Of Origin",
+    "email": "Email",
+    "age":"Age",
+    "isHired":"Hiring Status",   
+    "errorMessages": {
+      "required": "${$displayName} is required.",
+      "minLength": "${$displayName} must be at least 5 characters.",
+      "addressMinLength": "${$displayName} must be at least 10 characters.",
+      "email":"${$displayName} is not a valid email address.",
+      "range":"${$displayName} must be between or equal to 20 and 60.",
+      "validCountryName":"Please select ${$displayName}."
+     
+
+    },
+    "hired":"Hired",
+    "notHired":"Not Hired",
+    "submit":"Submit",
+    "update":"Update",
+    "reset":"Reset",
+    "noData":"No Applicant available"
+}

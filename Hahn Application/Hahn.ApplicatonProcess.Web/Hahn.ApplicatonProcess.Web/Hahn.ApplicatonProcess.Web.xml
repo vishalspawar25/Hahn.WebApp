@@ -1,0 +1,109 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Hahn.ApplicatonProcess.Web</name>
+    </assembly>
+    <members>
+        <member name="M:Hahn.ApplicatonProcess.Web.Controllers.ApplicantController.Get">
+             <summary>
+             Gets all Applicants.
+             </summary>
+             <remarks>
+            Gets all Applicants.
+             </remarks>
+             <returns>Collection of Applicant</returns>
+        </member>
+        <member name="M:Hahn.ApplicatonProcess.Web.Controllers.ApplicantController.Get(System.Int32)">
+            <summary>
+            Gets Applicant matching with specific id .
+            </summary>       
+            <param name="id">1</param>
+            <returns>Applicant</returns>
+        </member>
+        <member name="M:Hahn.ApplicatonProcess.Web.Controllers.ApplicantController.Post(Hahn.ApplicatonProcess.Data.models.Applicant)">
+             <summary>
+             Creates new Applicant.
+             </summary>
+             <remarks>
+             Sample request:
+            
+                 POST /Applicant
+                 {
+                    
+                    "name":"vishal",
+                    "familyName":"pawar",
+                    "email":"vishal@gmail.com",
+                    "age":30,
+                    "countryOfOrigin":"India",
+                    "address":"1203,Kasarvadavli,Mumbai",
+                    "isHired":true
+                 }
+            
+             </remarks>
+             <param name="value">Applicant object</param>
+             <returns>void</returns>
+        </member>
+        <member name="M:Hahn.ApplicatonProcess.Web.Controllers.ApplicantController.Put(System.Int32,Hahn.ApplicatonProcess.Data.models.Applicant)">
+             <summary>
+             Updates Applicant
+             </summary>         
+             <remarks>
+             Sample request:
+            
+                 PUT /Applicant
+                 {
+                    "id":1,
+                    "name":"vishal",
+                    "familyName":"pawar",
+                    "email":"vishal@gmail.com",
+                    "age":31,
+                    "countryOfOrigin":"Germany",
+                    "address":"1203,Kasarvadavli,Mumbai",
+                    "isHired":true
+                 }
+            
+             </remarks>
+             <param name="id">1</param>
+             <param name="value">applicant object</param>
+             <returns>void</returns>
+        </member>
+        <member name="M:Hahn.ApplicatonProcess.Web.Controllers.ApplicantController.Delete(System.Int32)">
+            <summary>
+            Deletes Applicant
+            </summary>     
+             <remarks>
+            Deletes Applicant
+             </remarks>
+            <param name="id">1</param>
+            <returns>void</returns>
+        </member>
+        <member name="M:Hahn.ApplicatonProcess.Web.Controllers.WeatherForecastController.Get">
+            <summary>
+            
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Hahn.ApplicatonProcess.Web.Controllers.WeatherForecastController.Post(Hahn.ApplicatonProcess.Data.models.Applicant)">
+             <summary>
+             Creates a TodoItem.
+             </summary>
+             <remarks>
+             Sample request:
+            
+                 POST /Applicant
+                 {
+                    "id": 0,
+                    "name": "string",
+                    "familyName": "string",
+                    "email": "string",
+                    "age": 0,
+                    "countryOfOrigin": "string",
+                    "address": "string"
+                 }
+            
+             </remarks>
+             <param name="item"></param>
+             <returns>A newly created TodoItem</returns>
+        </member>
+    </members>
+</doc>
