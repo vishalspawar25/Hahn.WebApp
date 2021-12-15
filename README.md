@@ -3,14 +3,14 @@ Demo application for Aurelia with Dotnet core API
 
 
 # Project Structure
-- 1.Hahn.ApplicatonProcess.December2020.Data
-- 2.Hahn.ApplicatonProcess.December2020.Domain
-- 3.Hahn.ApplicatonProcess.December2020.Web (Kestrel Host)
+- 1.Hahn.ApplicatonProcess.Data
+- 2.Hahn.ApplicatonProcess.Domain
+- 3.Hahn.ApplicatonProcess.Web (Kestrel Host)
   - web-app (Aurelia App)
   
   
 In dot net core 
--Hahn.ApplicatonProcess.December2020.Web
+-Hahn.ApplicatonProcess.Web
 
 is start-up project
 It will open swagger UI ,where you can see all REST endpoints
